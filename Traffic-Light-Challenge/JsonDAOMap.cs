@@ -66,6 +66,7 @@ namespace Traffic_Light_Challenge
                 }
             }
             Map map = new Map(id, width, height, baseField);
+            return map;
         }
 
         //Fuer spaeter einen genormten Parser verwenden
@@ -81,7 +82,7 @@ namespace Traffic_Light_Challenge
                 json += "[";
                 for (int column=0; column < map.Width; column++)
                 {
-                    BaseField field = map.Get(row, column);
+                    BaseField field = map.BaseField[row, column];
                     if(field is Street)
                     {
                         json += "\"street\"]";

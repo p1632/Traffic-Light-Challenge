@@ -41,5 +41,15 @@ namespace Traffic_Light_Challenge
             {
             }
         }
+
+        public void Start()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RequestStop()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

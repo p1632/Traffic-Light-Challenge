@@ -41,19 +41,19 @@
   <Class Name="Traffic_Light_Challenge.GameEngine">
     <Position X="3.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAADAEAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>GameEngine.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CarEngine" />
       <Property Name="DAOMap" />
       <Property Name="Map" />
+      <Property Name="CarEngine" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.JsonDAOMap" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="6.5" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAACAAEAAAAAACAAAAABAAAAAAA=</HashCode>
       <FileName>JsonDAOMap.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.413" />
@@ -76,13 +76,9 @@
   <Class Name="Traffic_Light_Challenge.Program">
     <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="View" />
-      <Property Name="GameEngine" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.Street" Collapsed="true">
     <Position X="2" Y="8.25" Width="1.5" />
@@ -101,34 +97,23 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrafficLight.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Traffic_Light_Challenge.View">
     <Position X="3.25" Y="0.75" Width="1.5" />
-    <AssociationLine Name="GameEngine" Type="Traffic_Light_Challenge.GameEngine">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.205" Y="0.612" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>View.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="GameEngine" />
-    </ShowAsAssociation>
   </Class>
   <Interface Name="Traffic_Light_Challenge.DAOMap">
     <Position X="6.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DAOMap.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Map" />
-    </ShowAsAssociation>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
