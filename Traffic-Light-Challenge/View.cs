@@ -7,7 +7,8 @@ namespace Traffic_Light_Challenge
 {
     public class View
     {
-        private GameEngine gameEngine;
+        private GameEngine gameEngine { get; set; }
+
         public View(GameEngine gameEngine)
         {
             this.gameEngine = gameEngine;
