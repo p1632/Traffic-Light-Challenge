@@ -9,6 +9,7 @@ namespace Traffic_Light_Challenge
     {
         public enum Orientation { N,O,S,W };
 
+        public List<Orientation> Path;
         public int X { get; set; }
         public int Y { get; set; }
         public Orientation CurrentOrientation { get; set; }

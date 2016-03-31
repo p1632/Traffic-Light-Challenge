@@ -10,13 +10,15 @@ namespace Traffic_Light_Challenge
     {
         private uint numberOfCars;
         private uint mapIndex;
+        private List<TrafficLight> TrafficLightList;
         /// <summary>
-        /// initializes the Game Engine with 
-        /// default number of cars(2) and 
-        /// default map(Map index = 1)
+        /// initializes the GameEngine with 
+        /// default number of cars(2)
+        /// default map(map index = 1)
         /// </summary>
         public GameEngine()
         {
+            init();
             //Setting default settings
             numberOfCars = 2;
             mapIndex = 1;
@@ -28,20 +30,20 @@ namespace Traffic_Light_Challenge
         /// </summary>
         public GameEngine(uint NumberOfCars, uint MapIndex)
         {
+            init();
             numberOfCars = NumberOfCars;
             mapIndex = MapIndex;
         }
 
+        private void init()
+        {
+            TrafficLightList = new List<TrafficLight>();
+        }
+
         private DAOMap DAOMap
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Map CurrentMap
@@ -50,24 +52,22 @@ namespace Traffic_Light_Challenge
             private set;
         }
 
-        private CarEngine[] CarEngine
+        private CarEngine CarEngine
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public void Start()
         {
             //get map
             CurrentMap = DAOMap.LoadMap(mapIndex);
-            //initialize CarEngines
-            CarEngine = new CarEngine[numberOfCars];
+
+            //scan map for traffic lights
+            scanMapForTrafficLights();
+
+            //initialize CarEngine
+            CarEngine = new CarEngine();
 
             //initialize gameloop
             Timer gameTicker = new Timer(500);
@@ -79,16 +79,31 @@ namespace Traffic_Light_Challenge
 
         private void gameLoop(object sender, ElapsedEventArgs e)
         {
-            for (int i = 0; i < numberOfCars; i++)
-            {
-                //move cars
-                //not decided if movement happens here or in carEngine
-            }
+            //move cars
+            //change traffic lights
         }
 
         public void RequestStop()
         {
             throw new System.NotImplementedException();
         }
+
+        /// <summary>
+        /// Scans CurrentMap for TrafficLights and adds them to TrafficLightList
+        /// </summary>
+        private void scanMapForTrafficLights()
+        {
+            for (int row = 0; row < CurrentMap.Height; row++)
+            {
+                for (int column = 0; column < CurrentMap.Width; column++)
+                {
+                    if(CurrentMap.BaseField[row,column] is TrafficLight)
+                    {
+                        TrafficLightList.Add((TrafficLight)CurrentMap.BaseField[row, column]);
+                    }
+                }
+            }
+        }
+
     }
 }
