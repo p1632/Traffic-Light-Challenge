@@ -7,16 +7,21 @@ namespace Traffic_Light_Challenge
 {
     public class View
     {
-        public GameEngine GameEngine
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        private GameEngine gameEngine { get; set; }
 
-            set
-            {
-            }
+        public View(GameEngine gameEngine)
+        {
+            this.gameEngine = gameEngine;
+        }
+
+        public void Start()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RequestStop()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

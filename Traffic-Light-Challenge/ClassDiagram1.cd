@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Traffic_Light_Challenge.BaseField" Collapsed="true">
-    <Position X="3.25" Y="7" Width="1.5" />
+    <Position X="3.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BaseField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Traffic_Light_Challenge.CarEngine">
-    <Position X="0.75" Y="3" Width="1.5" />
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="Traffic_Light_Challenge.CarEngine.Direction" Collapsed="true">
         <TypeIdentifier>
@@ -16,6 +19,11 @@
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
+    <AssociationLine Name="CarModel" Type="Traffic_Light_Challenge.CarModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.089" Y="0.216" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACgAAAAAAAiAAAAACQAAAAAAA=</HashCode>
       <FileName>CarEngine.cs</FileName>
@@ -25,7 +33,10 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.CarModel">
-    <Position X="0.75" Y="0.75" Width="1.5" />
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="Traffic_Light_Challenge.CarModel.Orientation" Collapsed="true">
         <TypeIdentifier>
@@ -41,28 +52,28 @@
   <Class Name="Traffic_Light_Challenge.GameEngine">
     <Position X="3.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAEAgAAAAAAAAEAAAAAABAIAAEAQAAAAAA=</HashCode>
       <FileName>GameEngine.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CarEngine" />
       <Property Name="DAOMap" />
-      <Property Name="Map" />
+      <Property Name="CurrentMap" />
+      <Property Name="CarEngine" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.JsonDAOMap" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="6.5" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAACAAEAAAAAACAAAAABAAAAAAA=</HashCode>
       <FileName>JsonDAOMap.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.413" />
   </Class>
   <Class Name="Traffic_Light_Challenge.Map">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="3.25" Y="6" Width="1.5" />
     <AssociationLine Name="BaseField" Type="Traffic_Light_Challenge.BaseField">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="-0.019" Y="0.11" Height="0.182" Width="0.975" />
+        <Position X="0.033" Y="0.193" Height="0.182" Width="0.975" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -74,25 +85,24 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.Program">
-    <Position X="6" Y="0.75" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="View" />
-      <Property Name="GameEngine" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Traffic_Light_Challenge.Street" Collapsed="true">
-    <Position X="2" Y="8.25" Width="1.5" />
+    <Position X="2" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Street.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Traffic_Light_Challenge.TrafficLight">
-    <Position X="4.25" Y="8.25" Width="1.5" />
+    <Position X="4.25" Y="10" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
       <Enum Name="Traffic_Light_Challenge.TrafficLight.State" Collapsed="true">
         <TypeIdentifier>
@@ -101,34 +111,31 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TrafficLight.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Traffic_Light_Challenge.View">
-    <Position X="3.25" Y="0.75" Width="1.5" />
-    <AssociationLine Name="GameEngine" Type="Traffic_Light_Challenge.GameEngine">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="gameEngine" Type="Traffic_Light_Challenge.GameEngine">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.205" Y="0.612" />
+        <Position X="0.041" Y="0.308" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>View.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="GameEngine" />
+      <Property Name="gameEngine" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Traffic_Light_Challenge.DAOMap">
-    <Position X="6.25" Y="3" Width="1.5" />
+    <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DAOMap.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Map" />
-    </ShowAsAssociation>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
