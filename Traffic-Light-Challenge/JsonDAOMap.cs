@@ -10,13 +10,23 @@ namespace Traffic_Light_Challenge
 {
     class JsonDAOMap : DAOMap
     {
+        //create an object of SingleObject
+        private static JsonDAOMap instance = new JsonDAOMap();
         private string path;
 
-        public JsonDAOMap()
+        //make the constructor private so that this class cannot be
+        //instantiated
+        private JsonDAOMap()
         {
             path = Directory.GetCurrentDirectory() + "\\Maps\\";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
+        }
+
+        //Get the only object available
+        public static JsonDAOMap getInstance()
+        {
+            return instance;
         }
 
         public Map LoadMap(uint mapID)
