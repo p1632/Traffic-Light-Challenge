@@ -8,9 +8,16 @@ namespace Traffic_Light_Challenge
 {
     public class GameEngine
     {
+        #region Variables and Properties
         private uint numberOfCars;
         private uint mapIndex;
-        private List<TrafficLight> TrafficLightList;
+        private List<TrafficLight> trafficLight;
+        private List<Street> startPosition;
+        private DAOMap DAOMap { get; set; } 
+        public Map CurrentMap { get; private set; } 
+        private CarEngine CarEngine { get; set; }
+        #endregion
+        #region Constructors
         /// <summary>
         /// initializes the GameEngine with 
         /// default number of cars(2)
@@ -34,37 +41,17 @@ namespace Traffic_Light_Challenge
             numberOfCars = NumberOfCars;
             mapIndex = MapIndex;
         }
-
-        private void init()
-        {
-            TrafficLightList = new List<TrafficLight>();
-        }
-
-        private DAOMap DAOMap
-        {
-            get;
-            set;
-        }
-
-        public Map CurrentMap
-        {
-            get;
-            private set;
-        }
-
-        private CarEngine CarEngine
-        {
-            get;
-            set;
-        }
-
+        #endregion
+        #region Start and Stop
         public void Start()
         {
             //get map
+            
             CurrentMap = DAOMap.LoadMap(mapIndex);
 
-            //scan map for traffic lights
+            //scan map for traffic lights and starting positions
             scanMapForTrafficLights();
+            scanMapForStartPoints();
 
             //initialize CarEngine
             CarEngine = new CarEngine();
@@ -77,15 +64,24 @@ namespace Traffic_Light_Challenge
             gameTicker.Start();
         }
 
+        public void RequestStop()
+        {
+            throw new System.NotImplementedException();
+        }
+        #endregion
+        #region Game
         private void gameLoop(object sender, ElapsedEventArgs e)
         {
             //move cars
             //change traffic lights
-        }
 
-        public void RequestStop()
+        }
+        #endregion
+        #region Methods for initializing and start
+        private void init()
         {
-            throw new System.NotImplementedException();
+            trafficLight = new List<TrafficLight>();
+            DAOMap = JsonDAOMap.getInstance();
         }
 
         /// <summary>
@@ -99,11 +95,38 @@ namespace Traffic_Light_Challenge
                 {
                     if(CurrentMap.BaseField[row,column] is TrafficLight)
                     {
-                        TrafficLightList.Add((TrafficLight)CurrentMap.BaseField[row, column]);
+                        trafficLight.Add((TrafficLight)CurrentMap.BaseField[row, column]);
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Scans the border of the map for streets and adds them to startPosition List
+        /// </summary>
+        private void scanMapForStartPoints()
+        {
+            for (int row = 0; row < CurrentMap.Height; row++)
+            {
+                if (CurrentMap.BaseField[row, 0] is Street)
+                    startPosition.Add((Street)CurrentMap.BaseField[row, 0]);
+            }
+            for (int row = 0; row < CurrentMap.Height; row++)
+            {
+                if (CurrentMap.BaseField[row, CurrentMap.Width - 1] is Street)
+                    startPosition.Add((Street)CurrentMap.BaseField[row, CurrentMap.Width - 1]);
+            }
+            for (int column = 0; column < CurrentMap.Height; column++)
+            {
+                if (CurrentMap.BaseField[0, column] is Street)
+                    startPosition.Add((Street)CurrentMap.BaseField[0, column]);
+            }
+            for (int column = 0; column < CurrentMap.Height; column++)
+            {
+                if (CurrentMap.BaseField[CurrentMap.Height - 1, column] is Street)
+                    startPosition.Add((Street)CurrentMap.BaseField[CurrentMap.Height - 1, column]);
+            }
+        }
+        #endregion
     }
 }
