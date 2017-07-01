@@ -1,6 +1,15 @@
-﻿ideas:
+﻿-ideas:
+
+-issues:
+
+-------------------------------
+old:
+
+#idea
 "factory" class for cars 
 	-> makes it easier to create random paths
 		-> could handle creation of cars on the map using defined start- and endpoints
 		-> could handle destruction of cars when they leave the map
 		-> could handle timing to spawn the cars
+#outcome
+will be implemented in CarEngine for now

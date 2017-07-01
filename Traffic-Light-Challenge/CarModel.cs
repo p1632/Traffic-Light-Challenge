@@ -7,10 +7,10 @@ namespace Traffic_Light_Challenge
 {
     public class CarModel
     {
-        public enum Orientation { N,O,S,W };
-
+        public enum Direction { N,E,S,W };
+        public List<Direction> Path;
         public int X { get; set; }
         public int Y { get; set; }
-        public Orientation CurrentOrientation { get; set; }
+        public Direction CurrentDirection { get; set; }
     }
 }
