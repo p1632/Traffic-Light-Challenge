@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traffic-Light-Challenge", "Traffic-Light-Challenge.csproj", "{307CD204-2D96-4CB9-A165-E8172C8691C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

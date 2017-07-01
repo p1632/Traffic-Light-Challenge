@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Traffic_Light_Challenge
 {
-    class Obstacle: BaseField
+    public class Obstacle: BaseField
     {
     }
 }

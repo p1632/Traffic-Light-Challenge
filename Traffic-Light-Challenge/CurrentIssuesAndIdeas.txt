@@ -1,6 +1,10 @@
 ﻿-ideas:
 
 -issues:
+ToDo:
+JsonDAOMap.cs -> parse json file
+
+Add MapNotValidException
 
 -------------------------------
 old:

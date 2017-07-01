@@ -8,7 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace Traffic_Light_Challenge
 {
-    class JsonDAOMap : DAOMap
+    /// <summary>
+    /// Used to load the map from JSON file to Map Class
+    /// Makes sure the map is valid, throws an MapNotValidException otherwise
+    /// </summary>
+    public class JsonDAOMap : DAOMap
     {
         //create an object of SingleObject
         private static JsonDAOMap instance = new JsonDAOMap();
@@ -50,32 +54,13 @@ namespace Traffic_Light_Challenge
 
         private Map parseJsonToMap(string json)
         {
-            uint id = Convert.ToUInt32(json.Split(',')[0].Split('=')[1]);
-            uint width = Convert.ToUInt32(json.Split(',')[1].Split('=')[1]);
-            uint height = Convert.ToUInt32(json.Split(',')[2].Split('=')[1]);
-            BaseField[,] baseField = new BaseField[height, width];
-            for(int row = 0; row < height; row++)
-            {
-                string fieldRow = json.Split('[')[2 + row].Split(']')[0];
-                for (int column = 0; column < width; column++)
-                {
-                    switch(fieldRow.Split(',')[column])
-                    {
-                        case "\"base\"":
-                            baseField[row, column] = new BaseField();
-                            break;
-                        case "\"street\"":
-                            baseField[row, column] = new Street();
-                            break;
-                        case "\"trafficLight\"":
-                            baseField[row, column] = new TrafficLight();
-                            break;
-                        default:
-                            throw new ArgumentException();
-                    }
-                }
-            }
-            Map map = new Map(id, width, height, baseField);
+            uint id = 1;
+            uint width = 3;
+            uint height = 3;
+            BaseField[,] baseField = new BaseField[width,height];
+            bool agtl = true;
+
+            Map map = new Map(id, width, height, baseField, agtl);
             return map;
         }
 
@@ -119,6 +104,81 @@ namespace Traffic_Light_Challenge
             json += "]";
             json += "}";
             return json;
+        }
+
+        private void GetEverything(string jsonString, ref uint id, ref uint width, ref uint height, ref bool agtl, BaseField[,] map)
+        {
+            //Overall Start
+            jsonString = removeSpaces(jsonString);
+
+            if (jsonString[0] == '[')
+            {
+                jsonString.Trim(new char[2] { '[', ']' });
+                jsonString = removeSpaces(jsonString);
+                jsonString = jsonString.Substring(1,findIndexOfClosingBracket(jsonString) - 1);
+                foreach(string x in jsonString.Split(',')) //does not work as intended, as there are multiple layers ([{...
+                {
+                    string parameter = x.Split(':')[0].Trim('\"');
+                    string value = x.Split(':')[1].Trim('\"');
+
+                    switch(parameter)
+                    {
+                        case "id":
+                            id = uint.Parse(parameter);
+                            break;
+                        case "width":
+                            width = uint.Parse(parameter);
+                            break;
+                        case "height":
+                            height = uint.Parse(parameter);
+                            break;
+                        case "agtl":
+                            agtl = (String.Equals(parameter,"true")) ? true : false;
+                            break;
+                        case "field":
+                            break;
+
+                    }
+                }
+            }
+
+        }
+
+        private string removeSpaces(string myString)
+        {
+            bool removeSpaces = true;
+            string newString = "";
+            foreach(char x in myString)
+            {
+                if (x == '"')
+                {
+                    removeSpaces = !removeSpaces;
+                }
+                if (!(" \t\r\n".IndexOf(x) == -1 && removeSpaces))
+                    newString += x;
+            }
+            return newString;
+        }
+
+        private int findIndexOfClosingBracket(string myString)
+        {
+            int index = 0;
+            uint noOfOpenBrackets = 0;
+            uint noOfClosingBrackets = 0;
+            do
+            {
+                switch (myString[index])
+                {
+                    case '{':
+                        noOfOpenBrackets++;
+                        break;
+                    case '}':
+                        noOfClosingBrackets++;
+                        break;
+                }
+                index++;
+            } while (noOfOpenBrackets == noOfClosingBrackets);
+            return index - 1;
         }
     }
 }

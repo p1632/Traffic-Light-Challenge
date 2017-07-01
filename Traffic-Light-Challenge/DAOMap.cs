@@ -1,6 +1,6 @@
 ﻿namespace Traffic_Light_Challenge
 {
-    interface DAOMap
+    public interface DAOMap
     {
         /// <summary>
         /// IF a map with map.ID of this object does not exist yet,
