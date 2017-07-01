@@ -7,5 +7,6 @@ namespace Traffic_Light_Challenge
 {
     public class Street : BaseField
     {
+
     }
 }

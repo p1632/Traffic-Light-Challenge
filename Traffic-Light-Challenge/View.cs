@@ -42,7 +42,7 @@ namespace Traffic_Light_Challenge
             }
 
             // Prints cars for the first time     
-            cars = gameEngine.GetCars;
+            cars = gameEngine.GetCars();
             foreach(CarModel car in cars)
             {
                 printChar(car.X, car.Y, getCarChar(car));
@@ -90,7 +90,7 @@ namespace Traffic_Light_Challenge
         {
             // For performance reasons, only print new car positions
 
-            List<CarModel> newCars = gameEngine.GetCars;
+            List<CarModel> newCars = gameEngine.GetCars();
             // Cars to "delete"
             foreach (CarModel car in getCarsWhichAreNotInOriginalList(newCars, cars))
             {
