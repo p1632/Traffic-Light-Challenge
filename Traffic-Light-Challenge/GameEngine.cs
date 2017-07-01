@@ -15,7 +15,7 @@ namespace Traffic_Light_Challenge
         private List<Street> startPosition;
         private DAOMap DAOMap { get; set; } 
         public Map CurrentMap { get; private set; } 
-        private CarEngine CarEngine { get; set; }
+        private CarEngine carEngine { get; set; }
         #endregion
         #region Constructors
         /// <summary>
@@ -54,7 +54,7 @@ namespace Traffic_Light_Challenge
             scanMapForStartPoints();
 
             //initialize CarEngine
-            CarEngine = new CarEngine();
+            carEngine = new CarEngine();
 
             //initialize gameloop
             Timer gameTicker = new Timer(500);
@@ -125,8 +125,13 @@ namespace Traffic_Light_Challenge
             {
                 if (CurrentMap.BaseField[CurrentMap.Height - 1, column] is Street)
                     startPosition.Add((Street)CurrentMap.BaseField[CurrentMap.Height - 1, column]);
-            }
+               }
         }
+
         #endregion
+        public List<CarModel> GetCars()
+        {
+            return carEngine.CarModel;
+        }
     }
 }

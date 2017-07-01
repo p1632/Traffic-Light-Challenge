@@ -1,0 +1,1 @@
+3 x Fehlerfreie JSON Maps, 2 davon gleiche ID --> Fehler weil gleiche ID auswerfen, oder 1. passende ID wählen?

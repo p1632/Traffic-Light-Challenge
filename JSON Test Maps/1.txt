@@ -1,0 +1,1 @@
+Fehlerfreie JSON Map inkl. Leerzeichen und Leerzeilen

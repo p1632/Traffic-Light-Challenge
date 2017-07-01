@@ -5,7 +5,17 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traffic-Light-Challenge", "Traffic-Light-Challenge.csproj", "{307CD204-2D96-4CB9-A165-E8172C8691C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "..\UnitTestProject1\UnitTestProject1.csproj", "{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON Test MAps", "JSON Test MAps", "{0F12F7CB-CFFA-4CA7-9D3A-9E070A6478E7}"
+	ProjectSection(SolutionItems) = preProject
+		..\JSON Test Maps\1.json = ..\JSON Test Maps\1.json
+		..\JSON Test Maps\1.txt = ..\JSON Test Maps\1.txt
+		..\JSON Test Maps\2.json = ..\JSON Test Maps\2.json
+		..\JSON Test Maps\2.txt = ..\JSON Test Maps\2.txt
+		..\JSON Test Maps\3.json = ..\JSON Test Maps\3.json
+		..\JSON Test Maps\3.txt = ..\JSON Test Maps\3.txt
+		..\JSON Test Maps\4.json = ..\JSON Test Maps\4.json
+		..\JSON Test Maps\4.txt = ..\JSON Test Maps\4.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +27,6 @@ Global
 		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{307CD204-2D96-4CB9-A165-E8172C8691C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B13A0E5E-0055-4BC8-BC84-ACE882C9964C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
