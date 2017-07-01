@@ -1,0 +1,26 @@
+[
+  {
+    "type" : "Map",
+    "id" : 1,
+    "height" : 3,
+    "width" : 3,
+    "agtl" : true,
+    "fields": [
+      {
+        "type" : "STR",
+        "x" : 1,
+        "y" : 0
+      },
+      {
+        "type" : "STR",
+        "x" : 1,
+        "y" : 1
+      },
+      {
+        "type" : "STR",
+        "x" : 1,
+        "y" : 2
+      }
+    ]
+  }
+]
